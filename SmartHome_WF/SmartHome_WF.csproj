@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -76,10 +77,51 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Delegates\WriteLogDelegate.cs" />
+    <Compile Include="Model\DeviceClasses\Conditioner.cs" />
+    <Compile Include="Model\DeviceClasses\Device.cs" />
+    <Compile Include="Model\DeviceClasses\Fridge.cs" />
+    <Compile Include="Model\DeviceClasses\MWOven.cs" />
+    <Compile Include="Model\DeviceClasses\Oven.cs" />
+    <Compile Include="Model\DeviceClasses\Radio.cs" />
+    <Compile Include="Model\DeviceClasses\RadioLamp.cs" />
+    <Compile Include="Model\DeviceInterfaces\IChannelable.cs" />
+    <Compile Include="Model\DeviceInterfaces\IDoorable.cs" />
+    <Compile Include="Model\DeviceInterfaces\IFridgeable.cs" />
+    <Compile Include="Model\DeviceInterfaces\ILightable.cs" />
+    <Compile Include="Model\DeviceInterfaces\IModeable.cs" />
+    <Compile Include="Model\DeviceInterfaces\IVolumeable.cs" />
+    <Compile Include="Model\Enums\FanMode.cs" />
+    <Compile Include="Model\Enums\FridgeMode.cs" />
+    <Compile Include="Model\Enums\LampMode.cs" />
+    <Compile Include="Model\Enums\MWOvenMode.cs" />
+    <Compile Include="Model\LowLevelClasses\AudioPlayer.cs" />
+    <Compile Include="Model\LowLevelClasses\ColdGenerator.cs" />
+    <Compile Include="Model\LowLevelClasses\Fan.cs" />
+    <Compile Include="Model\LowLevelClasses\Lamp.cs" />
+    <Compile Include="Model\LowLevelInterfaces\IBrightnesable.cs" />
+    <Compile Include="Model\LowLevelInterfaces\IFanable.cs" />
+    <Compile Include="Model\LowLevelInterfaces\ILowLevelVolumeable.cs" />
+    <Compile Include="Model\LowLevelInterfaces\ITemperatureable.cs" />
+    <Compile Include="Model\ServiceClasses\DeviceCreator.cs" />
+    <Compile Include="Model\ServiceClasses\FileOperations.cs" />
+    <Compile Include="Model\ServiceClasses\SerializerDictionaryXML.cs" />
+    <Compile Include="Model\ServiceClasses\WriteLogToFile.cs" />
+    <Compile Include="Model\UI\ConsoleUIDevice.cs" />
+    <Compile Include="Model\UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

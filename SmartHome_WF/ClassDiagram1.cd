@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NewSmartHome.DeviceClasses.Device" Collapsed="true">
+    <Position X="3" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAABAAAABAAAAAA=</HashCode>
+      <FileName>DeviceClasses\Device.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.ServiceClasses.SerializerDictionaryXML" Collapsed="true">
+    <Position X="16.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAIAAAACAAAABgAAAAAIAABAAAAAA=</HashCode>
+      <FileName>ServiceClasses\SerializerDictionaryXML.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Refrigerator.FileOperations" Collapsed="true">
+    <Position X="16.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAQAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceClasses\FileOperations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.ServiceClasses.DeviceCreator" Collapsed="true">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceClasses\DeviceCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.Fridge" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAABIAAAgEAAAgAAAAAAAAAAAQABAIAhAAAAAA=</HashCode>
+      <FileName>DeviceClasses\Fridge.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.Lamp" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAIA=</HashCode>
+      <FileName>LowLevelClasses\Lamp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.Oven" Collapsed="true">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAFAAAAAAAAAgAAAAAAAAAAAAABAIAgAAAAAA=</HashCode>
+      <FileName>DeviceClasses\Oven.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.Radio" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="NewSmartHome.DeviceClasses.Device" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="1.312" />
+        <Point X="3.75" Y="1.687" />
+        <Point X="4.875" Y="1.687" />
+        <Point X="4.875" Y="3" />
+        <Point X="5.25" Y="3" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAgICAAABAAAAAAAAAAAACAAAIAAAAAAAA=</HashCode>
+      <FileName>DeviceClasses\Radio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.RadioLamp" Collapsed="true">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABCAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceClasses\RadioLamp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.ColdGenerator" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAgAAAAAAAAAAAAABAAAgAAAAAA=</HashCode>
+      <FileName>LowLevelClasses\ColdGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.Conditioner" Collapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAgAAAAgACAAAAAEAAAQABAAAgAAAAAA=</HashCode>
+      <FileName>DeviceClasses\Conditioner.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.LowLevelClasses.Fan" Collapsed="true">
+    <Position X="12" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LowLevelClasses\Fan.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.LowLevelClasses.AudioPlayer" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LowLevelClasses\AudioPlayer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.DeviceClasses.MWOven" Collapsed="true">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceClasses\MWOven.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewSmartHome.UI.ConsoleUIDevice" Collapsed="true">
+    <Position X="5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAEAAAAAAAAQAAAAEAAAAAAAAAQAAAIABAAgA=</HashCode>
+      <FileName>UI\ConsoleUIDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewSmartHome.ServiceClasses.WriteLogToFile" Collapsed="true">
+    <Position X="16.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceClasses\WriteLogToFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="NewSmartHome.Interfaces.IBrightnesable" Collapsed="true">
+    <Position X="10.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>LowLevelInterfaces\IBrightnesable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.Interfaces.IModeable" Collapsed="true">
+    <Position X="2.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceInterfaces\IModeable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.Interfaces.ITemperatureable" Collapsed="true">
+    <Position X="12" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAgAAAAAAAAAAAAABAAAgAAAAAA=</HashCode>
+      <FileName>LowLevelInterfaces\ITemperatureable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.DeviceInterfaces.IFridgeable" Collapsed="true">
+    <Position X="2.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAgAAAAAAAAAAAAABAAAgAAAAAA=</HashCode>
+      <FileName>DeviceInterfaces\IFridgeable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.LowLevelInterfaces.IFanable" Collapsed="true">
+    <Position X="12" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LowLevelInterfaces\IFanable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.DeviceInterfaces.IChannelable" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAACAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceInterfaces\IChannelable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.DeviceInterfaces.IDoorable" Collapsed="true">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>DeviceInterfaces\IDoorable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.DeviceInterfaces.IVolumeable" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceInterfaces\IVolumeable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.LowLevelInterfaces.ILowLevelVolumeable" Collapsed="true">
+    <Position X="10.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LowLevelInterfaces\ILowLevelVolumeable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewSmartHome.DeviceInterfaces.ILightable" Collapsed="true">
+    <Position X="2.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeviceInterfaces\ILightable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="NewSmartHome.Enums.FridgeMode" Collapsed="true">
+    <Position X="10.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAFAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\FridgeMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NewSmartHome.Enums.LampMode" Collapsed="true">
+    <Position X="12" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\LampMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NewSmartHome.Enums.MWOvenMode" Collapsed="true">
+    <Position X="10.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIACQAAAAAAAAgAAA=</HashCode>
+      <FileName>Enums\MWOvenMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NewSmartHome.Enums.FanMode" Collapsed="true">
+    <Position X="12" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Enums\FanMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="NewSmartHome.Delegates.WriteLogDelegate" Collapsed="true">
+    <Position X="7.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Delegates\WriteLogDelegate.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
