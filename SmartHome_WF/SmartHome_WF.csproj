@@ -80,6 +80,9 @@
     <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DeviceControl.cs" />
+    <Compile Include="Controls\LightAbleControl.cs" />
+    <Compile Include="Controls\ModeableControl.cs" />
     <Compile Include="Model\Delegates\WriteLogDelegate.cs" />
     <Compile Include="Model\DeviceClasses\Conditioner.cs" />
     <Compile Include="Model\DeviceClasses\Device.cs" />
