@@ -11,17 +11,23 @@ namespace SmartHome_WF.Controls
 {
     public class ModeableControl : Panel
     {
-        
-        private List<RadioButton> listOfRadioButtonsForMods = new List<RadioButton>();
+
+        private List<RadioButton> listOfRadioButtonsForModes = new List<RadioButton>();
         private Label captionlabel = new Label();
-        
+        private Button setModeBt;
+        private IModeable sameDevice;
+
+        public ModeableControl(IModeable sameDevice)
+        {
+            this.sameDevice = sameDevice;
+        }
 
 
 
 
 
 
-        public void GetListOfAvailableModes(IModeable sameDevice)
+        public void SetMode()
         {
             captionlabel.Text = "List of aviable mods: ";
             Controls.Add(captionlabel);
@@ -38,41 +44,38 @@ namespace SmartHome_WF.Controls
             if (t2 != t)
             {
                 FieldInfo[] t2Fields = t2.GetFields();
-                for (int i = 0; i <= t2Fields.Length; i++)
+                //for (int i = 0; i < t2Fields.Length; i++)
+                //{
+                //    if (t2Fields[i].Name.Contains("_"))
+                //    { Array.Clear(t2Fields, i, 1); }
+                //}
+                for (int i = 0; i < t2Fields.Length; i++)
                 {
-                    if (!t2Fields[i].Name.Contains("_"))
+                    try
                     {
-                        listOfRadioButtonsForMods[i] = new RadioButton();
-                        listOfRadioButtonsForMods[i].GroupName = "modeOfDevice";
-                        listOfRadioButtonsForMods[i].ID = "idRadioButton" + i;
-                        listOfRadioButtonsForMods[i].Text = t2Fields[i].Name;
-                        listOfRadioButtonsForMods[i].CssClass = "listOfRadioButtonsForMods";
-                        Controls.Add(listOfRadioButtonsForMods[i]);
+                        listOfRadioButtonsForModes[i] = new RadioButton { GroupName = "modeOfDevice", ID = "idRadioButton" + i, Text = t2Fields[i].Name, CssClass = "listOfRadioButtonsForMods" };
+                        Controls.Add(listOfRadioButtonsForModes[i]);
                     }
+                    catch
+                    { }
+
                 }
             }
+            setModeBt = new Button { Text = "Set Mode", CssClass = "setButton", ID = "setModeBt" };
+            setModeBt.Click += setModeBt_Click;
 
         }
 
-        public void ControlWithModeable(IModeable sameDevice)
+        protected void setModeBt_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Mode setting.");
-            GetListOfAvailableModes(sameDevice);
-            string settingMode = Console.ReadLine().ToLower();
-            try
+            foreach (RadioButton rb in listOfRadioButtonsForModes)
             {
-                sameDevice.SetMode(settingMode);
+                if (rb.Checked)
+                {
+                    sameDevice.SetMode(rb.Text.ToLower());
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.Source);
-            }
-            if (actWithDevice != null)
-            {
-                actWithDevice.Invoke(sameDevice.SetMode(settingMode));
-            }
-
         }
+
     }
 }

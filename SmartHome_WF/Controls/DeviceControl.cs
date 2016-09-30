@@ -30,5 +30,7 @@ namespace SmartHome_WF.Controls
 
 
         private Label volumeValueLabel { set; get; }
+
+       
     }
 }
