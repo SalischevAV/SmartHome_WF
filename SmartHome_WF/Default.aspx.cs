@@ -11,9 +11,10 @@ using System.Web.UI.WebControls;
 
 namespace SmartHome_WF
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm1 : Page
     {
-        private Dictionary<string, Device> smartHoseDevicesDictionary;
+        private int id;
+        private Dictionary<string, Device> smartHoseDevicesDictionary = new Dictionary<string, Device>();
         protected void Page_Init(object sender, EventArgs e)
         {
 
@@ -24,8 +25,6 @@ namespace SmartHome_WF
             else
             {
                 DeviceCreator myDCreator = new DeviceCreator();
-
-                Dictionary<string, Device> smartHoseDevicesDictionary = new Dictionary<string, Device>();
 
                 smartHoseDevicesDictionary.Add("nord", myDCreator.CreateDevice("fridge"));
 
@@ -40,7 +39,7 @@ namespace SmartHome_WF
                 smartHoseDevicesDictionary.Add("seiko", myDCreator.CreateDevice("radiolamp"));
 
                 Session["Devices"] = smartHoseDevicesDictionary;
-                Session["NextId"] = 5;
+                Session["NextId"] = 6;
             }
         }
 
@@ -58,6 +57,14 @@ namespace SmartHome_WF
 
             LightAbleControl lc = new LightAbleControl(rl);
             ModeableControl mc = new ModeableControl(fr);
+            //DeviceControl dc = new DeviceControl(smartHoseDevicesDictionary);
+
+            foreach(Device devid in smartHoseDevicesDictionary.Values) // что сюда подавать????
+            {
+                Panel1.Controls.Add(new DeviceControl(smartHoseDevicesDictionary));
+            }
+
+            
             lc.SetBrightnessMode();
             mc.SetMode();
         }

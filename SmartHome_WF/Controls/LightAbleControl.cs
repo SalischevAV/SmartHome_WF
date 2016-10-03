@@ -37,10 +37,15 @@ namespace SmartHome_WF.Controls
             setBrightnessBt.Click += setBrightnessBt_Click;
 
             Controls.Add(brightnessText);
+            Controls.Add(Span("<br />"));
             Controls.Add(rbOff);
+            Controls.Add(Span("<br />"));
             Controls.Add(rbDim);
+            Controls.Add(Span("<br />"));
             Controls.Add(rbMediumBright);
+            Controls.Add(Span("<br />"));
             Controls.Add(rbBright);
+            Controls.Add(Span("<br />"));
             Controls.Add(setBrightnessBt);
 
 
@@ -60,7 +65,15 @@ namespace SmartHome_WF.Controls
             { lightableDevice.LightBrightnes = LampMode.bright; }
         }
 
-    
+        protected HtmlGenericControl Span(string innerHTML)
+        {
+            HtmlGenericControl span = new HtmlGenericControl("span");
+            span.InnerHtml = innerHTML;
+            return span;
+        }
+
+
+
 
     }
 }
