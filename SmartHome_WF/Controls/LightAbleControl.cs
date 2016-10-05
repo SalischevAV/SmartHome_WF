@@ -1,4 +1,5 @@
-﻿using NewSmartHome.DeviceInterfaces;
+﻿using NewSmartHome.DeviceClasses;
+using NewSmartHome.DeviceInterfaces;
 using NewSmartHome.Enums;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace SmartHome_WF.Controls
 {
-    public class LightAbleControl:Panel
+    public class LightAbleControl:SpanAndDivDrowControl
     {
         private ILightable lightableDevice;
 
@@ -21,12 +22,12 @@ namespace SmartHome_WF.Controls
         private RadioButton rbBright;
 
         private Button setBrightnessBt;
-        public LightAbleControl(ILightable lightableDevice)
+        public LightAbleControl(IDictionary<string, Device> smartHoseDevicesDictionary) : base(smartHoseDevicesDictionary)
         {
-            this.lightableDevice = lightableDevice;
+            DrowSetBrightnessMode();
         }
 
-        public void SetBrightnessMode()
+        public void DrowSetBrightnessMode()
         {
             brightnessText = new Label { Text = "Available modes: ", CssClass = "brighnessText"};
             rbOff = new RadioButton { GroupName = "brightness", ID = "rbOff", CssClass = "lightAbleRB", Text = "Brightness Off" };
@@ -64,16 +65,5 @@ namespace SmartHome_WF.Controls
             if(rbBright.Checked)
             { lightableDevice.LightBrightnes = LampMode.bright; }
         }
-
-        protected HtmlGenericControl Span(string innerHTML)
-        {
-            HtmlGenericControl span = new HtmlGenericControl("span");
-            span.InnerHtml = innerHTML;
-            return span;
-        }
-
-
-
-
     }
 }

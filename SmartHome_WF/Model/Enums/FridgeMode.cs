@@ -8,8 +8,8 @@ namespace NewSmartHome.Enums
 {
     public enum FridgeMode
     {
+        defrost,
         extracold,
-        cold,
-        defrost
+        cold        
     }
 }

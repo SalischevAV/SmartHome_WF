@@ -28,15 +28,15 @@ namespace SmartHome_WF
 
                 smartHoseDevicesDictionary.Add("nord", myDCreator.CreateDevice("fridge"));
 
-                smartHoseDevicesDictionary.Add("mitsubishi", myDCreator.CreateDevice("conditioner"));
+                //smartHoseDevicesDictionary.Add("mitsubishi", myDCreator.CreateDevice("conditioner"));
 
-                smartHoseDevicesDictionary.Add("spidola", myDCreator.CreateDevice("radio"));
+                //smartHoseDevicesDictionary.Add("spidola", myDCreator.CreateDevice("radio"));
 
-                smartHoseDevicesDictionary.Add("indesit", myDCreator.CreateDevice("oven"));
+                //smartHoseDevicesDictionary.Add("indesit", myDCreator.CreateDevice("oven"));
 
-                smartHoseDevicesDictionary.Add("siemens", myDCreator.CreateDevice("mwoven"));
+                //smartHoseDevicesDictionary.Add("siemens", myDCreator.CreateDevice("mwoven"));
 
-                smartHoseDevicesDictionary.Add("seiko", myDCreator.CreateDevice("radiolamp"));
+                //smartHoseDevicesDictionary.Add("seiko", myDCreator.CreateDevice("radiolamp"));
 
                 Session["Devices"] = smartHoseDevicesDictionary;
                 Session["NextId"] = 6;
@@ -65,8 +65,8 @@ namespace SmartHome_WF
             }
 
             
-            lc.SetBrightnessMode();
-            mc.SetMode();
+            lc.DrowSetBrightnessMode();
+            mc.DrowSetMode();
         }
     }
 }
