@@ -26,9 +26,9 @@ namespace SmartHome_WF.Controls
         private void DrowSetVolume()
         {
             Controls.Add(Span("Volume set: <br />"));
-            volumeIncrButton = new Button { ID = "volumelIncr" + smartHoseDevicesDictionary.ElementAt(id).Key, Text = "+", CssClass = "volume+" };
-            volumelValueBox = new TextBox { ID = "volumelValue" + smartHoseDevicesDictionary.ElementAt(id).Key, CssClass = "volumelValue", Text = "0" };
-            volumeDecrButton = new Button { ID = "volumeDecr" + smartHoseDevicesDictionary.ElementAt(id).Key, Text = "-", CssClass = "volume-" };
+            volumeIncrButton = new Button { ID = "volumelIncr" + DeviceGetID(), Text = "+", CssClass = "volume+" };
+            volumelValueBox = new TextBox { ID = "volumelValue" + DeviceGetID(), CssClass = "volumelValue", Text = "0" };
+            volumeDecrButton = new Button { ID = "volumeDecr" + DeviceGetID(), Text = "-", CssClass = "volume-" };
             Controls.Add(volumeIncrButton);
             Controls.Add(volumelValueBox);
             Controls.Add(volumeDecrButton);

@@ -28,15 +28,15 @@ namespace SmartHome_WF
 
                 smartHoseDevicesDictionary.Add("nord", myDCreator.CreateDevice("fridge"));
 
-                //smartHoseDevicesDictionary.Add("mitsubishi", myDCreator.CreateDevice("conditioner"));
+                smartHoseDevicesDictionary.Add("mitsubishi", myDCreator.CreateDevice("conditioner"));
 
-                //smartHoseDevicesDictionary.Add("spidola", myDCreator.CreateDevice("radio"));
+                smartHoseDevicesDictionary.Add("spidola", myDCreator.CreateDevice("radio"));
 
-                //smartHoseDevicesDictionary.Add("indesit", myDCreator.CreateDevice("oven"));
+                smartHoseDevicesDictionary.Add("indesit", myDCreator.CreateDevice("oven"));
 
-                //smartHoseDevicesDictionary.Add("siemens", myDCreator.CreateDevice("mwoven"));
+                smartHoseDevicesDictionary.Add("siemens", myDCreator.CreateDevice("mwoven"));
 
-                //smartHoseDevicesDictionary.Add("seiko", myDCreator.CreateDevice("radiolamp"));
+                smartHoseDevicesDictionary.Add("seiko", myDCreator.CreateDevice("radiolamp"));
 
                 Session["Devices"] = smartHoseDevicesDictionary;
                 Session["NextId"] = 6;
@@ -55,18 +55,15 @@ namespace SmartHome_WF
             ColdGenerator cg = new ColdGenerator();
             Fridge fr = new Fridge(l1, cg);
 
-            LightAbleControl lc = new LightAbleControl(rl);
-            ModeableControl mc = new ModeableControl(fr);
-            //DeviceControl dc = new DeviceControl(smartHoseDevicesDictionary);
+        
 
             foreach(Device devid in smartHoseDevicesDictionary.Values) // что сюда подавать????
             {
-                Panel1.Controls.Add(new SmartHomeControl(fr));
+                Panel1.Controls.Add(new SmartHomeControl(devid));
             }
 
             
-            lc.DrowSetBrightnessMode();
-            mc.DrowSetMode();
+            
         }
     }
 }

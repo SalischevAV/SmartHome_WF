@@ -26,7 +26,7 @@ namespace SmartHome_WF.Controls
             doorState.Click += DoorState_Click;
             Controls.Add(doorState);
             Controls.Add(Span("   "));
-            doorLamp = new CheckBox { ID = "doorLamp" + DeviceGetID(), Text = "Door Lamp Off", CssClass = "doorLamp" };
+            doorLamp = new CheckBox { ID = "doorLamp" + DeviceGetID(), Text = "Door Lamp Off", CssClass = "doorLamp", BackColor=System.Drawing.Color.Red };
             Controls.Add(doorLamp);
             Controls.Add(Span(" <br />"));
         }
@@ -39,11 +39,13 @@ namespace SmartHome_WF.Controls
                 doorState.Text = "Door open";
                 doorLamp.Checked = true;
                 doorLamp.Text = "Door Lamp On";
+                doorLamp.BackColor = System.Drawing.Color.Red;
             }
             else {
                 doorState.Text = "Door close";
                 doorLamp.Checked = false;
                 doorLamp.Text = "Door Lamp Off";
+                doorLamp.BackColor = System.Drawing.Color.Green;
             }
 
         }

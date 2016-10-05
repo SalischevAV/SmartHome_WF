@@ -25,11 +25,11 @@ namespace SmartHome_WF.Controls
         {
 
             Controls.Add(Span("Сhannel selection: <br />"));
-            channelIncrButton = new Button { ID = "channelIncr" + smartHoseDevicesDictionary.ElementAt(id).Key, Text = "+", CssClass = "channel+" };
-            channelValueBox = new TextBox { ID = "channelValue" + smartHoseDevicesDictionary.ElementAt(id).Key, CssClass = "channelValue" };
-            channelDecrButton = new Button { ID = "channelDecr" + smartHoseDevicesDictionary.ElementAt(id).Key, Text = "-", CssClass = "channel-" };
+            channelIncrButton = new Button { ID = "channelIncr" +DeviceGetID(), Text = "+", CssClass = "channel+" };
+            channelValueBox = new TextBox { ID = "channelValue" + DeviceGetID(), CssClass = "channelValue" };
+            channelDecrButton = new Button { ID = "channelDecr" + DeviceGetID(), Text = "-", CssClass = "channel-" };
             Controls.Add(Span("<br />"));
-            setChannelButton = new Button { ID = "channelSet" + smartHoseDevicesDictionary.ElementAt(id).Key, Text = "Set", CssClass = "channelSet" };
+            setChannelButton = new Button { ID = "channelSet" + DeviceGetID(), Text = "Set", CssClass = "channelSet" };
             Controls.Add(channelIncrButton);
             Controls.Add(channelValueBox);
             Controls.Add(channelDecrButton);
