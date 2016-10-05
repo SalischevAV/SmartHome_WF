@@ -50,7 +50,7 @@ namespace SmartHome_WF.Controls
                     try
                     {
                         if (!t2Fields[i].Name.Contains("value"))
-                            listOfRadioButtonsForModes.Add(new RadioButton { GroupName = "modeOfDevice", ID = "idRadioButton" + DeviceGetID(), Text = t2Fields[i].Name, CssClass = "listOfRadioButtonsForMods" });
+                        listOfRadioButtonsForModes.Add(new RadioButton { GroupName = "modeOfDevice", ID = "idRadioButton" + DeviceGetID(), Text = t2Fields[i].Name, CssClass = "listOfRadioButtonsForMods" });
                         Controls.Add(listOfRadioButtonsForModes[i]);
                         Controls.Add(Span("<br />"));
                     }

@@ -27,6 +27,7 @@ namespace SmartHome_WF.Controls
             Controls.Add(doorState);
             Controls.Add(Span("   "));
             doorLamp = new CheckBox { ID = "doorLamp" + DeviceGetID(), Text = "Door Lamp Off", CssClass = "doorLamp" };
+            Controls.Add(doorLamp);
             Controls.Add(Span(" <br />"));
         }
 

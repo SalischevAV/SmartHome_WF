@@ -61,7 +61,7 @@ namespace SmartHome_WF
 
             foreach(Device devid in smartHoseDevicesDictionary.Values) // что сюда подавать????
             {
-                Panel1.Controls.Add(new DeviceControl(smartHoseDevicesDictionary));
+                Panel1.Controls.Add(new SmartHomeControl(fr));
             }
 
             

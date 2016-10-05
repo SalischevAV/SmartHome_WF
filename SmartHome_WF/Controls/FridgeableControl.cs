@@ -24,11 +24,11 @@ namespace SmartHome_WF.Controls
         public void DrowSetFridgeable()
         {
             Controls.Add(Span("Temperature set: <br />"));
-            temperatureIncrButton = new Button { ID = "tempIncr" + smartHoseDevicesDictionary.ElementAt(id).Key, Text = "+", CssClass = "temp+" };
-            temperatureValueBox = new TextBox { ID = "tempValue" + smartHoseDevicesDictionary.ElementAt(id).Key, CssClass = "templValue" };
-            temperatureDecrButton = new Button { ID = "tempDecr" + smartHoseDevicesDictionary.ElementAt(id).Key, Text = "-", CssClass = "temp-" };
+            temperatureIncrButton = new Button { ID = "tempIncr" + DeviceGetID(), Text = "+", CssClass = "temp+" };
+            temperatureValueBox = new TextBox { ID = "tempValue" +DeviceGetID(), CssClass = "templValue" };
+            temperatureDecrButton = new Button { ID = "tempDecr" + DeviceGetID(), Text = "-", CssClass = "temp-" };
             Controls.Add(Span("<br />"));
-            setTemperaturelButton = new Button { ID = "tempSet" + smartHoseDevicesDictionary.ElementAt(id).Key, Text = "Set", CssClass = "tempSet" };
+            setTemperaturelButton = new Button { ID = "tempSet" + DeviceGetID(), Text = "Set", CssClass = "tempSet" };
             Controls.Add(temperatureIncrButton);
             Controls.Add(temperatureValueBox);
             Controls.Add(temperatureDecrButton);

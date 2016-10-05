@@ -81,7 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\ChannellableControl.cs" />
-    <Compile Include="Controls\DeviceControl.cs" />
+    <Compile Include="Controls\SmartHomeControl.cs" />
     <Compile Include="Controls\DoorAbleControl.cs" />
     <Compile Include="Controls\FridgeableControl.cs" />
     <Compile Include="Controls\LightAbleControl.cs" />

@@ -10,10 +10,8 @@ using System.Web.UI.WebControls;
 
 namespace SmartHome_WF.Controls
 {
-    public class LightAbleControl:SpanAndDivDrowControl
+    public class LightAbleControl : SpanAndDivDrowControl
     {
-        private ILightable lightableDevice;
-
         private Label brightnessText;
 
         private RadioButton rbOff;
@@ -22,14 +20,14 @@ namespace SmartHome_WF.Controls
         private RadioButton rbBright;
 
         private Button setBrightnessBt;
-        public LightAbleControl(IDictionary<string, Device> smartHoseDevicesDictionary) : base(smartHoseDevicesDictionary)
+        public LightAbleControl(Device sameDevice) : base(sameDevice)
         {
             DrowSetBrightnessMode();
         }
 
         public void DrowSetBrightnessMode()
         {
-            brightnessText = new Label { Text = "Available modes: ", CssClass = "brighnessText"};
+            brightnessText = new Label { Text = "Available modes: ", CssClass = "brighnessText" };
             rbOff = new RadioButton { GroupName = "brightness", ID = "rbOff", CssClass = "lightAbleRB", Text = "Brightness Off" };
             rbDim = new RadioButton { GroupName = "brightness", ID = "rbDim", CssClass = "lightAbleRB", Text = "Brightness Dim" };
             rbMediumBright = new RadioButton { GroupName = "brightness", ID = "rbMediumBright", CssClass = "lightAbleRB", Text = "Brightness MediumBright" };
@@ -57,13 +55,15 @@ namespace SmartHome_WF.Controls
         protected void setBrightnessBt_Click(object sender, EventArgs e)
         {
             if (rbOff.Checked)
-            { lightableDevice.LightBrightnes = LampMode.off; }
-            if(rbDim.Checked)
-            { lightableDevice.LightBrightnes = LampMode.dim; }
-            if(rbMediumBright.Checked)
-            { lightableDevice.LightBrightnes = LampMode.mediumbright; }
-            if(rbBright.Checked)
-            { lightableDevice.LightBrightnes = LampMode.bright; }
+            {
+                ((ILightable)sameDevice).LightBrightnes = LampMode.off;
+            }
+            if (rbDim.Checked)
+            { ((ILightable)sameDevice).LightBrightnes = LampMode.dim; }
+            if (rbMediumBright.Checked)
+            { ((ILightable)sameDevice).LightBrightnes = LampMode.mediumbright; }
+            if (rbBright.Checked)
+            { ((ILightable)sameDevice).LightBrightnes = LampMode.bright; }
         }
     }
 }
