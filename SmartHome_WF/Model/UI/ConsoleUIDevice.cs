@@ -26,7 +26,7 @@ namespace NewSmartHome.UI
                 sameDevice.SetChannel(setChannel);
                 if (actWithDevice != null)
                 {
-                    actWithDevice.Invoke((sameDevice.SetChannel(setChannel))); // можно как-то проще?
+                    actWithDevice.Invoke((sameDevice.SetChannel(setChannel))); // можно как-то проще????
                 }
             }
             else if (Message.Contains("increase"))
