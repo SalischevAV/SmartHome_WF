@@ -12,7 +12,7 @@
             float: left;
             margin: 3px;
             padding: 3px;
-            height: 200px;
+            height: 300px;
             width: 300px;
             }
     </style>

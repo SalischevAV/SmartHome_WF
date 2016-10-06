@@ -18,9 +18,11 @@ namespace SmartHome_WF
         protected void Page_Init(object sender, EventArgs e)
         {
 
+
             if (IsPostBack)
             {
                 smartHoseDevicesDictionary = (Dictionary<string, Device>)Session["Devices"];
+
             }
             else
             {
@@ -38,8 +40,10 @@ namespace SmartHome_WF
 
                 smartHoseDevicesDictionary.Add("seiko", myDCreator.CreateDevice("radiolamp"));
 
+
                 Session["Devices"] = smartHoseDevicesDictionary;
                 Session["NextId"] = 6;
+
             }
         }
 
@@ -50,20 +54,15 @@ namespace SmartHome_WF
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            RadioLamp rl = new RadioLamp();
-            Lamp l1 = new Lamp();
-            ColdGenerator cg = new ColdGenerator();
-            Fridge fr = new Fridge(l1, cg);
 
-        
 
-            foreach(Device devid in smartHoseDevicesDictionary.Values) // что сюда подавать????
+            foreach (Device devid in smartHoseDevicesDictionary.Values)
             {
                 Panel1.Controls.Add(new SmartHomeControl(devid));
             }
 
-            
-            
+
+
         }
     }
 }

@@ -10,7 +10,7 @@ namespace SmartHome_WF.Controls
 {
     public class SpanAndDivDrowControl : Panel
     {
-        protected int id;
+        protected static int id;
         protected IDictionary<string, Device> smartHoseDevicesDictionary;
         protected Device sameDevice;
 
@@ -34,8 +34,9 @@ namespace SmartHome_WF.Controls
 
         public int DeviceGetID()
         {
-            Random getID = new Random();
-            return sameDevice.GetHashCode() + getID.Next();
+            id++;
+            return id;
+            
         }
     }
 }

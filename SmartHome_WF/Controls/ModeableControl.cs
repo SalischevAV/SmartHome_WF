@@ -44,22 +44,22 @@ namespace SmartHome_WF.Controls
             {
                 FieldInfo[] t2Fields = t2.GetFields();
                 listAviableMods.AddRange(t2Fields);
-                for (int i = 0; i < listAviableMods.Count; i++)
-
+                //for (int i = 0; i < listAviableMods.Count; i++)
+                    foreach(var res in listAviableMods)
                 {
-                    try
+                    if (!res.Name.Contains("value__"))
                     {
-                        if (!t2Fields[i].Name.Contains("value"))
-                        listOfRadioButtonsForModes.Add(new RadioButton { GroupName = "modeOfDevice", ID = "idRadioButton" + DeviceGetID(), Text = t2Fields[i].Name, CssClass = "listOfRadioButtonsForMods" });
-                        Controls.Add(listOfRadioButtonsForModes[i]);
-                        Controls.Add(Span("<br />"));
+                        listOfRadioButtonsForModes.Add(new RadioButton { GroupName = "modeOfDevice", ID = "idRadioButton" + DeviceGetID(), Text = res.Name, CssClass = "listOfRadioButtonsForMods" });
                     }
-                    catch
-                    { Controls.Add(Span("!!!!!!!!!<br />")); }
 
                 }
+                foreach (var res in listOfRadioButtonsForModes)
+                {
+                    Controls.Add(res);
+                    Controls.Add(Span("<br />"));
+                }
             }
-            setModeBt = new Button { Text = "Set Mode", CssClass = "setButton", ID = "setModeBt" };
+            setModeBt = new Button { Text = "Set Mode", CssClass = "setButton", ID = "setModeBt" + DeviceGetID() };
             setModeBt.Click += setModeBt_Click;
 
 

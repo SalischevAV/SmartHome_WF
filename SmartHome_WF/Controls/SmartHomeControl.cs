@@ -31,12 +31,12 @@ namespace SmartHome_WF.Controls
         protected void DrowSmartHome()//подавать id?
         {
             CssClass = "smartDeviceDrow";
-            Controls.Add(Span("Device: " + sameDevice.GetType().Name +  "<br />"));//имя из словаря придется совать в дефаулт
+            Controls.Add(Span("Device: " + sameDevice.GetType().Name + "<br />"));//имя из словаря придется совать в дефаулт
 
             powerState = new Button { ID = "powerState" + DeviceGetID(), Text = "Power", CssClass = "powerState" };
-            powerState.Click += PowerState_Click;
             Controls.Add(powerState);
             Controls.Add(Span(" <br />"));
+            powerState.Click += PowerState_Click;
 
 
             if (sameDevice is IChannelable)
@@ -55,7 +55,7 @@ namespace SmartHome_WF.Controls
             }
 
             if (sameDevice is IVolumeable)
-                {
+            {
                 vC = new VolumeAbleControl(sameDevice);
                 Controls.Add(vC);
                 Controls.Add(Span(" <br />"));
@@ -88,12 +88,12 @@ namespace SmartHome_WF.Controls
         private void PowerState_Click(object sender, EventArgs e)
         {
             sameDevice.Power();
-            if(sameDevice.State == true)
+            if (sameDevice.State == true)
             { powerState.Text = "Power on"; }
             else { powerState.Text = "Power off"; }
         }
 
-                
+
 
 
     }
