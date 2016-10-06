@@ -13,12 +13,15 @@ namespace SmartHome_WF.Controls
 {
     public class SmartHomeControl : SpanAndDivDrowControl
     {
-        public SmartHomeControl(Device sameDevice) : base(sameDevice)
+        public SmartHomeControl(string deviceName, Device sameDevice) : base(sameDevice)
         {
+            this.deviceName = deviceName;
             DrowSmartHome();
         }
+        protected string deviceName;
 
         private Button powerState;
+        private Label devNameLb;
 
 
         private ChannellableControl chC;
@@ -28,10 +31,13 @@ namespace SmartHome_WF.Controls
         private ModeableControl mC;
         private VolumeAbleControl vC;
 
-        protected void DrowSmartHome()//подавать id?
+        protected void DrowSmartHome()
         {
             CssClass = "smartDeviceDrow";
-            Controls.Add(Span("Device: " + sameDevice.GetType().Name + "<br />"));//имя из словаря придется совать в дефаулт
+            devNameLb = new Label { Text = deviceName, CssClass = "devNameLb" };
+            Controls.Add(devNameLb);
+            Controls.Add(Span(" <br />"));
+            Controls.Add(Span("Device: " + sameDevice.GetType().Name + "<br />"));
 
             powerState = new Button { ID = "powerState" + DeviceGetID(), Text = "Power", CssClass = "powerState" };
             Controls.Add(powerState);

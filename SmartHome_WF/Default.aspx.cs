@@ -13,7 +13,6 @@ namespace SmartHome_WF
 {
     public partial class WebForm1 : Page
     {
-        private int id;
         private Dictionary<string, Device> smartHoseDevicesDictionary = new Dictionary<string, Device>();
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -42,7 +41,6 @@ namespace SmartHome_WF
 
 
                 Session["Devices"] = smartHoseDevicesDictionary;
-                Session["NextId"] = 6;
 
             }
         }
@@ -54,15 +52,48 @@ namespace SmartHome_WF
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (IsPostBack)
+            //{
+            //    Button1.Click += Button1_Click1;
+            //}
 
 
-            foreach (Device devid in smartHoseDevicesDictionary.Values)
+            foreach (var res in smartHoseDevicesDictionary)
             {
-                Panel1.Controls.Add(new SmartHomeControl(devid));
+                Panel1.Controls.Add(new SmartHomeControl(res.Key, res.Value));
             }
 
 
 
         }
+
+        //private void Button1_Click1(object sender, EventArgs e)
+        //{
+        //    DeviceCreator dc = new DeviceCreator();
+        //    switch (CreateDeviceList.SelectedIndex)
+        //    {
+        //        default:
+        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("conditioner"));
+        //            break;
+        //        case 1:
+        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("fridge"));
+        //            break;
+        //        case 2:
+        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("mwoven"));
+        //            break;
+        //        case 3:
+        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("oven"));
+        //            break;
+        //        case 4:
+        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("radio"));
+        //            dc.CreateDevice("radio");
+        //            break;
+        //        case 5:
+        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("radiolamp"));
+        //            break;
+        //    }
+        //}
+
+        
     }
 }

@@ -27,7 +27,7 @@ namespace SmartHome_WF.Controls
 
         public void DrowSetBrightnessMode()
         {
-            brightnessText = new Label { Text = "Available modes: ", CssClass = "brighnessText" };
+            brightnessText = new Label { Text = "Available brightness: ", CssClass = "brighnessText" };
             rbOff = new RadioButton { GroupName = "brightness", ID = "rbOff", CssClass = "lightAbleRB", Text = "Brightness Off" };
             rbDim = new RadioButton { GroupName = "brightness", ID = "rbDim", CssClass = "lightAbleRB", Text = "Brightness Dim" };
             rbMediumBright = new RadioButton { GroupName = "brightness", ID = "rbMediumBright", CssClass = "lightAbleRB", Text = "Brightness MediumBright" };

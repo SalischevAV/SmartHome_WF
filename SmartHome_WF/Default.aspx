@@ -20,6 +20,15 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:TextBox ID="TextBox1" runat="server" Text="device name"></asp:TextBox>
+             <asp:DropDownList ID="CreateDeviceList" runat="server">
+                <asp:ListItem>Кондиционер</asp:ListItem>
+                <asp:ListItem>Холодильник</asp:ListItem>
+                <asp:ListItem>Микроволновка</asp:ListItem>
+                <asp:ListItem>Духовка</asp:ListItem>
+                 <asp:ListItem>Радио</asp:ListItem>
+                 <asp:ListItem>Радиолампа</asp:ListItem>
+            </asp:DropDownList>
             <asp:Panel ID="Panel1" runat="server"></asp:Panel>
         </div>
     </form>
