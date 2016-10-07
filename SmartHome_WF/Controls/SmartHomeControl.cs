@@ -13,12 +13,10 @@ namespace SmartHome_WF.Controls
 {
     public class SmartHomeControl : SpanAndDivDrowControl
     {
-        public SmartHomeControl(string deviceName, Device sameDevice) : base(sameDevice)
+        public SmartHomeControl(string deviceName, Device sameDevice) : base(deviceName, sameDevice)
         {
-            this.deviceName = deviceName;
             DrowSmartHome();
         }
-        protected string deviceName;
 
         private Button powerState;
         private Label devNameLb;
@@ -47,7 +45,7 @@ namespace SmartHome_WF.Controls
 
             if (sameDevice is IChannelable)
             {
-                chC = new ChannellableControl(sameDevice);
+                chC = new ChannellableControl(deviceName, sameDevice);
                 Controls.Add(chC);
                 Controls.Add(Span(" <br />"));
 
@@ -55,28 +53,28 @@ namespace SmartHome_WF.Controls
 
             if (sameDevice is IDoorable)
             {
-                dC = new DoorAbleControl(sameDevice);
+                dC = new DoorAbleControl(deviceName, sameDevice);
                 Controls.Add(dC);
                 Controls.Add(Span(" <br />"));
             }
 
             if (sameDevice is IVolumeable)
             {
-                vC = new VolumeAbleControl(sameDevice);
+                vC = new VolumeAbleControl(deviceName, sameDevice);
                 Controls.Add(vC);
                 Controls.Add(Span(" <br />"));
             }
 
             if (sameDevice is IFridgeable)
             {
-                fC = new FridgeableControl(sameDevice);
+                fC = new FridgeableControl(deviceName, sameDevice);
                 Controls.Add(fC);
                 Controls.Add(Span(" <br />"));
             }
 
             if (sameDevice is ILightable)
             {
-                lC = new LightAbleControl(sameDevice);
+                lC = new LightAbleControl(deviceName, sameDevice);
                 Controls.Add(lC);
                 Controls.Add(Span(" <br />"));
 
@@ -84,7 +82,7 @@ namespace SmartHome_WF.Controls
 
             if (sameDevice is IModeable)
             {
-                mC = new ModeableControl(sameDevice);
+                mC = new ModeableControl(deviceName, sameDevice);
                 Controls.Add(mC);
                 Controls.Add(Span(" <br />"));
             }

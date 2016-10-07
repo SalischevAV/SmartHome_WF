@@ -14,7 +14,7 @@ namespace SmartHome_WF.Controls
 
         private CheckBox doorLamp;
 
-        public DoorAbleControl(Device sameDevice) : base(sameDevice)
+        public DoorAbleControl(string deviceName, Device sameDevice) : base(deviceName, sameDevice)
         {
             DrowSetDoor();   
         }

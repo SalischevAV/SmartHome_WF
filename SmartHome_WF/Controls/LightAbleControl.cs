@@ -20,7 +20,7 @@ namespace SmartHome_WF.Controls
         private RadioButton rbBright;
 
         private Button setBrightnessBt;
-        public LightAbleControl(Device sameDevice) : base(sameDevice)
+        public LightAbleControl(string deviceName, Device sameDevice) : base(deviceName, sameDevice)
         {
             DrowSetBrightnessMode();
         }

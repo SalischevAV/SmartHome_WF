@@ -13,10 +13,12 @@ namespace SmartHome_WF.Controls
         protected static int id;
         protected IDictionary<string, Device> smartHoseDevicesDictionary;
         protected Device sameDevice;
+        protected string deviceName;
 
-        public SpanAndDivDrowControl(Device sameDevice)
+        public SpanAndDivDrowControl(string deviceName, Device sameDevice)
         {
             this.sameDevice = sameDevice;
+            this.deviceName = deviceName;
         }
         protected HtmlGenericControl Span(string innerHTML)
         {
@@ -32,10 +34,10 @@ namespace SmartHome_WF.Controls
             return div;
         }
 
-        public int DeviceGetID()
+        public string DeviceGetID()
         {
-            id++;
-            return id;
+            
+            return deviceName;
             
         }
     }

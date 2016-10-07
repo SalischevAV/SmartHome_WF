@@ -10,7 +10,7 @@ namespace SmartHome_WF.Controls
 {
     public class VolumeAbleControl : SpanAndDivDrowControl
     {
-        public VolumeAbleControl(Device sameDevice) : base(sameDevice)
+        public VolumeAbleControl(string deviceName, Device sameDevice) : base(deviceName, sameDevice)
         {
             DrowSetVolume();
         }
@@ -27,7 +27,7 @@ namespace SmartHome_WF.Controls
         {
             Controls.Add(Span("Volume set: <br />"));
             volumeIncrButton = new Button { ID = "volumelIncr" + DeviceGetID(), Text = "+", CssClass = "volume+" };
-            volumelValueBox = new TextBox { ID = "volumelValue" + DeviceGetID(), CssClass = "volumelValue", Text = "0" };
+            volumelValueBox = new TextBox { ID = "volumelValue" + DeviceGetID(), CssClass = "volumelValue", Text = ((IVolumeable)sameDevice).Volume.ToString() };
             volumeDecrButton = new Button { ID = "volumeDecr" + DeviceGetID(), Text = "-", CssClass = "volume-" };
             Controls.Add(volumeIncrButton);
             Controls.Add(volumelValueBox);
@@ -39,14 +39,14 @@ namespace SmartHome_WF.Controls
 
         private void VolumeDecrButton_Click(object sender, EventArgs e)
         {
-            ((IVolumeable)smartHoseDevicesDictionary.ElementAt(id).Value).SetVolume(false);
-            volumelValueBox.Text = ((IVolumeable)smartHoseDevicesDictionary.ElementAt(id).Value).Volume.ToString();
+            ((IVolumeable)sameDevice).SetVolume(false);
+            volumelValueBox.Text = ((IVolumeable)sameDevice).Volume.ToString();
         }
 
         private void VolumeIncrButton_Click(object sender, EventArgs e)
         {
-            ((IVolumeable)smartHoseDevicesDictionary.ElementAt(id).Value).SetVolume(true);
-            volumelValueBox.Text = ((IVolumeable)smartHoseDevicesDictionary.ElementAt(id).Value).Volume.ToString();
+            ((IVolumeable)sameDevice).SetVolume(true);
+            volumelValueBox.Text = ((IVolumeable)sameDevice).Volume.ToString();
         }
     }
 }

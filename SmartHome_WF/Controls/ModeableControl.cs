@@ -20,7 +20,7 @@ namespace SmartHome_WF.Controls
         private Button setModeBt;
 
 
-        public ModeableControl(Device sameDevice) : base(sameDevice)
+        public ModeableControl(string deviceName, Device sameDevice) : base(deviceName, sameDevice)
         {
             DrowSetMode();
         }
@@ -44,12 +44,13 @@ namespace SmartHome_WF.Controls
             {
                 FieldInfo[] t2Fields = t2.GetFields();
                 listAviableMods.AddRange(t2Fields);
-                //for (int i = 0; i < listAviableMods.Count; i++)
+                int i = 1;
                     foreach(var res in listAviableMods)
                 {
                     if (!res.Name.Contains("value__"))
                     {
-                        listOfRadioButtonsForModes.Add(new RadioButton { GroupName = "modeOfDevice", ID = "idRadioButton" + DeviceGetID(), Text = res.Name, CssClass = "listOfRadioButtonsForMods" });
+                        i++;   
+                        listOfRadioButtonsForModes.Add(new RadioButton { GroupName = "modeOfDevice", ID = "idRadioButton" + DeviceGetID()+i, Text = res.Name, CssClass = "listOfRadioButtonsForMods" });
                     }
 
                 }

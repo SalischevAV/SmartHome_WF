@@ -10,7 +10,7 @@ namespace SmartHome_WF.Controls
 {
     public class FridgeableControl : SpanAndDivDrowControl
     {
-        public FridgeableControl(Device sameDevice) : base(sameDevice)
+        public FridgeableControl(string deviceName, Device sameDevice) : base(deviceName, sameDevice)
         {
             DrowSetFridgeable();
         }
@@ -25,7 +25,7 @@ namespace SmartHome_WF.Controls
         {
             Controls.Add(Span("Temperature set: <br />"));
             temperatureIncrButton = new Button { ID = "tempIncr" + DeviceGetID(), Text = "+", CssClass = "temp+" };
-            temperatureValueBox = new TextBox { ID = "tempValue" +DeviceGetID(), CssClass = "templValue" };
+            temperatureValueBox = new TextBox { ID = "tempValue" + DeviceGetID(), CssClass = "templValue", Text = ((IFridgeable)sameDevice).Temp.ToString() };
             temperatureDecrButton = new Button { ID = "tempDecr" + DeviceGetID(), Text = "-", CssClass = "temp-" };
             Controls.Add(Span("<br />"));
             setTemperaturelButton = new Button { ID = "tempSet" + DeviceGetID(), Text = "Set", CssClass = "tempSet" };
@@ -43,8 +43,8 @@ namespace SmartHome_WF.Controls
         {
             try
             {
-                ((IFridgeable)smartHoseDevicesDictionary.ElementAt(id).Value).SetTemp(Convert.ToInt32(temperatureValueBox.Text));
-                temperatureValueBox.Text = ((IFridgeable)smartHoseDevicesDictionary.ElementAt(id).Value).Temp.ToString();
+                ((IFridgeable)sameDevice).SetTemp(Convert.ToInt32(temperatureValueBox.Text));
+                temperatureValueBox.Text = ((IFridgeable)sameDevice).Temp.ToString();
             }
             catch (Exception exm)
             {
@@ -54,14 +54,14 @@ namespace SmartHome_WF.Controls
 
         private void TemperatureDecrButton_Click(object sender, EventArgs e)
         {
-            ((IFridgeable)smartHoseDevicesDictionary.ElementAt(id).Value).DecrTemp();
-            temperatureValueBox.Text = ((IFridgeable)smartHoseDevicesDictionary.ElementAt(id).Value).Temp.ToString();
+            ((IFridgeable)sameDevice).DecrTemp();
+            temperatureValueBox.Text = ((IFridgeable)sameDevice).Temp.ToString();
         }
 
         private void TemperatureIncrButton_Click(object sender, EventArgs e)
         {
-            ((IFridgeable)smartHoseDevicesDictionary.ElementAt(id).Value).IncrTemp();
-            temperatureValueBox.Text = ((IFridgeable)smartHoseDevicesDictionary.ElementAt(id).Value).Temp.ToString();
+            ((IFridgeable)sameDevice).IncrTemp();
+            temperatureValueBox.Text = ((IFridgeable)sameDevice).Temp.ToString();
         }
 
     }

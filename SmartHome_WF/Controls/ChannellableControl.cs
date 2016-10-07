@@ -10,7 +10,7 @@ namespace SmartHome_WF.Controls
 {
     public class ChannellableControl : SpanAndDivDrowControl
     {
-        public ChannellableControl(Device sameDevice) : base(sameDevice)
+        public ChannellableControl(string deviceName, Device sameDevice) : base(deviceName, sameDevice)
         {
             DrowSetChannel();
         }
@@ -26,7 +26,7 @@ namespace SmartHome_WF.Controls
 
             Controls.Add(Span("Сhannel selection: <br />"));
             channelIncrButton = new Button { ID = "channelIncr" +DeviceGetID(), Text = "+", CssClass = "channel+" };
-            channelValueBox = new TextBox { ID = "channelValue" + DeviceGetID(), CssClass = "channelValue" };
+            channelValueBox = new TextBox { ID = "channelValue" + DeviceGetID(), CssClass = "channelValue", Text = ((IChannelable)sameDevice).Channel.ToString() };
             channelDecrButton = new Button { ID = "channelDecr" + DeviceGetID(), Text = "-", CssClass = "channel-" };
             Controls.Add(Span("<br />"));
             setChannelButton = new Button { ID = "channelSet" + DeviceGetID(), Text = "Set", CssClass = "channelSet" };
@@ -44,8 +44,8 @@ namespace SmartHome_WF.Controls
         {
             try
             {
-                ((IChannelable)smartHoseDevicesDictionary.ElementAt(id).Value).SetChannel(Convert.ToInt32(channelValueBox.Text));
-                channelValueBox.Text = ((IChannelable)smartHoseDevicesDictionary.ElementAt(id).Value).Channel.ToString();
+                ((IChannelable)sameDevice).SetChannel(Convert.ToInt32(channelValueBox.Text));
+                channelValueBox.Text = ((IChannelable)sameDevice).Channel.ToString();
             }
             catch (Exception exm)
             {
@@ -55,14 +55,14 @@ namespace SmartHome_WF.Controls
 
         private void ChannelDecrButton_Click(object sender, EventArgs e)
         {
-            ((IChannelable)smartHoseDevicesDictionary.ElementAt(id).Value).AdjustChannel(true);
-            channelValueBox.Text = ((IChannelable)smartHoseDevicesDictionary.ElementAt(id).Value).Channel.ToString();
+            ((IChannelable)sameDevice).AdjustChannel(false);
+            channelValueBox.Text = ((IChannelable)sameDevice).Channel.ToString();
         }
 
         private void ChannelIncrButton_Click(object sender, EventArgs e)
         {
-            ((IChannelable)smartHoseDevicesDictionary.ElementAt(id).Value).AdjustChannel(false);
-            channelValueBox.Text = ((IChannelable)smartHoseDevicesDictionary.ElementAt(id).Value).Channel.ToString();
+            ((IChannelable)sameDevice).AdjustChannel(true);
+            channelValueBox.Text = ((IChannelable)sameDevice).Channel.ToString();
         }
     }
 }
