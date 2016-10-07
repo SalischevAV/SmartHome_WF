@@ -20,7 +20,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="TextBox1" runat="server" Text="device name"></asp:TextBox>
+            <asp:TextBox ID="DevNameBox" runat="server" Text="device name"></asp:TextBox>
              <asp:DropDownList ID="CreateDeviceList" runat="server">
                 <asp:ListItem>Кондиционер</asp:ListItem>
                 <asp:ListItem>Холодильник</asp:ListItem>
@@ -29,6 +29,9 @@
                  <asp:ListItem>Радио</asp:ListItem>
                  <asp:ListItem>Радиолампа</asp:ListItem>
             </asp:DropDownList>
+            <asp:Button ID="AddButton" runat="server" Text="AddDevice" OnClick="AddButton_Click" />
+            <br />
+            <asp:Label ID="InformationLabel" runat="server"></asp:Label>
             <asp:Panel ID="Panel1" runat="server"></asp:Panel>
         </div>
     </form>

@@ -22,13 +22,13 @@ namespace SmartHome_WF {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// TextBox1 элемент управления.
+        /// DevNameBox элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox DevNameBox;
         
         /// <summary>
         /// CreateDeviceList элемент управления.
@@ -38,6 +38,24 @@ namespace SmartHome_WF {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList CreateDeviceList;
+        
+        /// <summary>
+        /// AddButton элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddButton;
+        
+        /// <summary>
+        /// InformationLabel элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label InformationLabel;
         
         /// <summary>
         /// Panel1 элемент управления.

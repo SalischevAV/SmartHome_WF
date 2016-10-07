@@ -21,6 +21,14 @@ namespace SmartHome_WF
             if (IsPostBack)
             {
                 smartHoseDevicesDictionary = (Dictionary<string, Device>)Session["Devices"];
+                foreach (var res in Controls)
+                {
+                    if (res is SmartHomeControl)
+                    {
+                        ((SmartHomeControl)res).deleter += DelDevice;
+                    }
+                }
+
 
             }
             else
@@ -52,48 +60,49 @@ namespace SmartHome_WF
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (IsPostBack)
-            //{
-            //    Button1.Click += Button1_Click1;
-            //}
-
-
             foreach (var res in smartHoseDevicesDictionary)
             {
                 Panel1.Controls.Add(new SmartHomeControl(res.Key, res.Value));
+
             }
-
-
-
+           
         }
 
-        //private void Button1_Click1(object sender, EventArgs e)
-        //{
-        //    DeviceCreator dc = new DeviceCreator();
-        //    switch (CreateDeviceList.SelectedIndex)
-        //    {
-        //        default:
-        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("conditioner"));
-        //            break;
-        //        case 1:
-        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("fridge"));
-        //            break;
-        //        case 2:
-        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("mwoven"));
-        //            break;
-        //        case 3:
-        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("oven"));
-        //            break;
-        //        case 4:
-        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("radio"));
-        //            dc.CreateDevice("radio");
-        //            break;
-        //        case 5:
-        //            smartHoseDevicesDictionary.Add(TextBox1.Text, dc.CreateDevice("radiolamp"));
-        //            break;
-        //    }
-        //}
+        public void DelDevice(string deviceName)
+        {
+            smartHoseDevicesDictionary.Remove(deviceName);
+        }
 
-        
+        protected void AddButton_Click(object sender, EventArgs e)
+        {
+            DeviceCreator dc = new DeviceCreator();
+            try
+            {
+                switch (CreateDeviceList.SelectedIndex)
+                {
+                    default:
+                        smartHoseDevicesDictionary.Add(DevNameBox.Text, dc.CreateDevice("conditioner"));
+                        break;
+                    case 1:
+                        smartHoseDevicesDictionary.Add(DevNameBox.Text, dc.CreateDevice("fridge"));
+                        break;
+                    case 2:
+                        smartHoseDevicesDictionary.Add(DevNameBox.Text, dc.CreateDevice("mwoven"));
+                        break;
+                    case 3:
+                        smartHoseDevicesDictionary.Add(DevNameBox.Text, dc.CreateDevice("oven"));
+                        break;
+                    case 4:
+                        smartHoseDevicesDictionary.Add(DevNameBox.Text, dc.CreateDevice("radio"));
+                        break;
+                    case 5:
+                        smartHoseDevicesDictionary.Add(DevNameBox.Text, dc.CreateDevice("radiolamp"));
+                        break;
+
+                }
+            }
+            catch (Exception ex)
+            { InformationLabel.Text = ex.Message; }
+        }
     }
 }

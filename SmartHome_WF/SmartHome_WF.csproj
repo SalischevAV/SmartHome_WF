@@ -88,6 +88,7 @@
     <Compile Include="Controls\ModeableControl.cs" />
     <Compile Include="Controls\SpanAndDivDrowControl.cs" />
     <Compile Include="Controls\VolumeAbleControl.cs" />
+    <Compile Include="Model\Delegates\DeleteDevice.cs" />
     <Compile Include="Model\Delegates\WriteLogDelegate.cs" />
     <Compile Include="Model\DeviceClasses\Conditioner.cs" />
     <Compile Include="Model\DeviceClasses\Device.cs" />

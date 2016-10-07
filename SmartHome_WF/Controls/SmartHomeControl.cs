@@ -1,6 +1,7 @@
 ﻿using NewSmartHome.DeviceClasses;
 using NewSmartHome.DeviceInterfaces;
 using NewSmartHome.Interfaces;
+using SmartHome_WF.Model.Delegates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,10 @@ namespace SmartHome_WF.Controls
             DrowSmartHome();
         }
 
+        public event DeleteDevice deleter;
+
         private Button powerState;
+        private Button delButton;
         private Label devNameLb;
 
 
@@ -87,7 +91,21 @@ namespace SmartHome_WF.Controls
                 Controls.Add(Span(" <br />"));
             }
 
+            delButton = new Button { ID = "delButton" + DeviceGetID(), Text = "Delete", CssClass = "delButton" };
+            Controls.Add(delButton);
+            delButton.Click += DelButton_Click;
+
         }
+
+        private void DelButton_Click(object sender, EventArgs e)
+        {
+            if (deleter != null)
+            {
+                deleter.Invoke(deviceName);
+            }
+        }
+
+
 
         private void PowerState_Click(object sender, EventArgs e)
         {
