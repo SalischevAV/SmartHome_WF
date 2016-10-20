@@ -21,15 +21,6 @@ namespace SmartHome_WF
             if (IsPostBack)
             {
                 smartHoseDevicesDictionary = (Dictionary<string, Device>)Session["Devices"];
-                foreach (var res in Controls)
-                {
-                    if (res is SmartHomeControl)
-                    {
-                        ((SmartHomeControl)res).deleter += DelDevice;
-                    }
-                }
-
-
             }
             else
             {
@@ -65,7 +56,14 @@ namespace SmartHome_WF
                 Panel1.Controls.Add(new SmartHomeControl(res.Key, res.Value));
 
             }
-           
+            foreach (var res in Panel1.Controls)
+            {
+                if (res is SmartHomeControl)
+                {
+                    ((SmartHomeControl)res).deleter += DelDevice;
+                }
+            }
+
         }
 
         public void DelDevice(string deviceName)
